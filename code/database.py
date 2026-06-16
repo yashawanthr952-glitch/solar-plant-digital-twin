@@ -66,7 +66,7 @@ result_df = pd.DataFrame({
 })
 
 # Remove nighttime rows to save space
-result_df = result_df[result_df["plant_ac_kw"] > 0]
+#result_df = result_df[result_df["plant_ac_kw"] > 0]
 
 print(f"Total rows to store: {len(result_df)}")
 print(result_df.head())
