@@ -4,6 +4,15 @@ A full-stack Digital Twin of a 400kW solar power plant — integrating real weat
 
 >A project by an Electrical Engineering student at VJTI Mumbai, targeting ER&D roles in Industrial IoT, Digital Twin, and Energy Systems.
 
+## 🔍 Problem Statement
+
+Solar power plants operate continuously across hundreds of panels and inverters, generating thousands of data points every hour. Traditional monitoring systemsv report plant-wide averages — which means a single underperforming string, a degraded inverter, or an early-stage fault stays invisible until it causes measurable revenue loss.
+
+There is no easy way to:
+- Visualize equipment health spatially across the plant
+- Isolate faults to a specific string out of 150
+- Simulate "what was happening at 2PM on a cloudy day in February"
+- Connect physics-level PV behavior to a live 3D model
 ---
 
 ## 🎥 Demo Video
