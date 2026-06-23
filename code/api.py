@@ -192,3 +192,31 @@ def get_current():
     if df.empty:
         return {"error": "No data"}
     return df.iloc[0].to_dict()
+
+@app.get("/plant/strings")
+def get_string_data(datetime_str: str = Query(default=None)):
+    conn = get_db()
+    
+    if datetime_str:
+        dt = datetime_str.replace("T", " ")
+        df = pd.read_sql("""
+            SELECT string_id, string_kw, is_fault 
+            FROM string_data 
+            WHERE datetime >= ?
+            ORDER BY datetime ASC, string_id ASC
+            LIMIT 150
+        """, conn, params=(dt,))
+    else:
+        df = pd.read_sql("""
+            SELECT string_id, string_kw, is_fault 
+            FROM string_data 
+            ORDER BY datetime DESC, string_id ASC
+            LIMIT 150
+        """, conn)
+    
+    conn.close()
+    
+    if df.empty:
+        return {"error": "No string data found"}
+    
+    return df.to_dict(orient="records")

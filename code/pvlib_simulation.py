@@ -41,8 +41,8 @@ system = pvlib.pvsystem.PVSystem(
     module_parameters=module,
     inverter_parameters=inverter,
     temperature_model_parameters=temperature_model,
-    modules_per_string=20,
-    strings_per_inverter=17        # corrected
+    modules_per_string=11,
+    strings_per_inverter=30        # corrected
 )
 
 mc = pvlib.modelchain.ModelChain(system, location)
